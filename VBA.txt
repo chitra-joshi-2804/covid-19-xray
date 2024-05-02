@@ -1,0 +1,25 @@
+Sub GeneratePredictions()
+    Dim numImages As Integer
+    Dim i As Integer
+    Dim predictions() As String
+    
+    ' Number of images to classify
+    numImages = 5
+    
+    ' Array to store predictions
+    ReDim predictions(1 To numImages)
+    
+    ' Generate random predictions for demonstration
+    For i = 1 To numImages
+        If Rnd() < 0.5 Then
+            predictions(i) = "COVID-19"
+        Else
+            predictions(i) = "Non-COVID-19"
+        End If
+    Next i
+    
+    ' Display predictions
+    For i = 1 To numImages
+        MsgBox "Prediction for Image " & i & ": " & predictions(i)
+    Next i
+End Sub
